@@ -14,9 +14,13 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a <= 0 || b <= 0 || c <= 0
+    raise TriangleError, "Possible errors: All sides must be greater than 0. The sum of two sides must be greater than the third."
+  end
+
   if a == b && a == c
     :equilateral
-  elsif (a == b || a == c) || (a == c || b == c)
+  elsif(a == b || a == c) || (a == c || b == c)
     :isosceles
   else
     :scalene
@@ -25,4 +29,9 @@ end
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
+  def triangles(a, b, c)
+      TriangleError
+      TriangleError
+    end
+  end
 end
